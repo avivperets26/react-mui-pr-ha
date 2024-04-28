@@ -4,6 +4,7 @@ const KEYS = {
 };
 
 export const getDepartmentCollection = () => [
+  { name: "None", id: 0 },
   { name: "Development", id: 1 },
   { name: "Marketing", id: 2 },
   { name: "Accounting", id: 3 },
@@ -43,4 +44,13 @@ export function getAllEmployees() {
     localStorage.setItem(KEYS.employees, JSON.stringify([]));
   const localEmployees = localStorage.getItem(KEYS.employees);
   return JSON.parse(localEmployees);
+}
+
+export function deleteEmployees(idsToDelete) {
+  let employees = getAllEmployees(); // Get all the employees
+  employees = employees.filter(
+    // Filter the employees
+    (employee) => !idsToDelete.includes(employee.id) // Remove the employees with the ids to delete
+  );
+  localStorage.setItem(KEYS.employees, JSON.stringify(employees)); // Save the updated list of employees
 }

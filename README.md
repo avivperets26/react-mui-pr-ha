@@ -52,7 +52,7 @@ Features:
 
 Spend some time to familiarise yourself with the code
 
-## Search
+## Search - FIXED
 
 Search is broken at the minute - what could be the problem?
 
@@ -63,6 +63,8 @@ If we search with `ro` we search correctly
 If we search with `Ro` we no longer search correctly even though there are items that match
 
 ![](docs/media/search-issue-2.png)
+
+
 
 ## Add / Department dropdown
 
